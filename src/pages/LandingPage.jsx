@@ -88,7 +88,13 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
       {/* ======================================================== */}
       {/* 2. NATIONAL CONTROL ROOM STATS BAR                       */}
       {/* ======================================================== */}
-      <section className="py-8 border-y border-slate-200/80 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/40">
+      <section
+        className="py-8 border-y transition-all"
+        style={{
+          backgroundColor: darkMode ? '#0F172A' : '#F8FAFC',
+          borderColor: darkMode ? '#1E293B' : '#E2E8F0'
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <ReusableCard
@@ -157,7 +163,13 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 p-4 sm:p-6 lg:p-8 shadow-xl backdrop-blur-sm">
+          <div
+            className="max-w-4xl mx-auto rounded-3xl border p-4 sm:p-6 lg:p-8 shadow-xl backdrop-blur-sm transition-all"
+            style={{
+              backgroundColor: darkMode ? 'rgba(15,23,42,0.92)' : 'rgba(255,255,255,0.95)',
+              borderColor: darkMode ? '#334155' : '#E2E8F0'
+            }}
+          >
             {/* Simulator Tabs */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
               <button
@@ -222,17 +234,23 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
             </div>
 
             {/* Simulation Canvas Display */}
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 p-5 sm:p-6 min-h-[220px] flex items-center justify-center">
+            <div
+              className="rounded-2xl border p-5 sm:p-6 min-h-[220px] flex items-center justify-center transition-all"
+              style={{
+                backgroundColor: darkMode ? '#0B1120' : '#F8FAFC',
+                borderColor: darkMode ? '#334155' : '#E2E8F0'
+              }}
+            >
               {isSimulating ? (
                 <div className="text-center py-8 space-y-3">
                   <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-semibold" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
                     Executing Deterministic Rules & National Index Query...
                   </p>
                 </div>
               ) : simulatedResult ? (
                 <div className="w-full space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-200 dark:border-slate-800">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b" style={{ borderColor: darkMode ? '#334155' : '#E2E8F0' }}>
                     <div className="flex items-center gap-2">
                       <span
                         className={`w-3 h-3 rounded-full ${
@@ -243,23 +261,30 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
                             : 'bg-blue-500'
                         }`}
                       ></span>
-                      <span className="font-bold text-sm text-slate-800 dark:text-slate-100">
+                      <span className="font-bold text-sm" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                         {simulatedResult.title}
                       </span>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      <span
+                        className="text-xs font-mono px-2 py-0.5 rounded"
+                        style={{
+                          backgroundColor: darkMode ? '#1E293B' : '#E2E8F0',
+                          color: darkMode ? '#CBD5E1' : '#334155'
+                        }}
+                      >
                         {simulatedResult.rule}
                       </span>
                       <span
-                        className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
+                        className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                        style={
                           simulatedResult.status === 'BLOCKED'
-                            ? 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300'
+                            ? { backgroundColor: darkMode ? '#4C0519' : '#FFE4E6', color: darkMode ? '#FCA5A5' : '#9F1239' }
                             : simulatedResult.status === 'VERIFIED'
-                            ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
-                            : 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
-                        }`}
+                            ? { backgroundColor: darkMode ? '#022C22' : '#DCFCE7', color: darkMode ? '#6EE7B7' : '#166534' }
+                            : { backgroundColor: darkMode ? '#172554' : '#DBEAFE', color: darkMode ? '#93C5FD' : '#1E40AF' }
+                        }
                       >
                         {simulatedResult.severity}
                       </span>
@@ -267,45 +292,62 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                      <span className="text-slate-400 block font-medium">Subject Identity</span>
-                      <strong className="text-slate-800 dark:text-slate-200 block mt-0.5">
+                    <div
+                      className="p-3 rounded-xl border"
+                      style={{
+                        backgroundColor: darkMode ? '#1E293B' : '#FFFFFF',
+                        borderColor: darkMode ? '#334155' : '#E2E8F0'
+                      }}
+                    >
+                      <span className="block font-medium" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>Subject Identity</span>
+                      <strong className="block mt-0.5" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                         {simulatedResult.student}
                       </strong>
-                      <span className="font-mono text-slate-500 dark:text-slate-400 mt-1 block">
+                      <span className="font-mono mt-1 block" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
                         APAAR: {simulatedResult.apaar}
                       </span>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                      <span className="text-slate-400 block font-medium">Automatic System Disposition</span>
-                      <strong className="text-slate-800 dark:text-slate-200 block mt-0.5">
+                    <div
+                      className="p-3 rounded-xl border"
+                      style={{
+                        backgroundColor: darkMode ? '#1E293B' : '#FFFFFF',
+                        borderColor: darkMode ? '#334155' : '#E2E8F0'
+                      }}
+                    >
+                      <span className="block font-medium" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>Automatic System Disposition</span>
+                      <strong className="block mt-0.5" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                         {simulatedResult.actionTaken}
                       </strong>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed bg-white/50 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-200/50 dark:border-slate-800/50">
-                    <strong className="text-slate-700 dark:text-slate-300">Detection Detail: </strong>
+                  <p
+                    className="text-xs leading-relaxed p-3 rounded-xl border"
+                    style={{
+                      backgroundColor: darkMode ? 'rgba(30,41,59,0.5)' : 'rgba(255,255,255,0.7)',
+                      borderColor: darkMode ? '#334155' : '#E2E8F0',
+                      color: darkMode ? '#CBD5E1' : '#475569'
+                    }}
+                  >
+                    <strong style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>Detection Detail: </strong>
                     {simulatedResult.detail}
                   </p>
                 </div>
               ) : null}
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-2">
+            <div className="mt-4 flex flex-wrap items-center justify-between text-xs gap-2" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
               <span className="flex items-center gap-1.5">
                 <i className="bi bi-shield-check text-emerald-500"></i>
                 Zero AI Hallucination • 100% Deterministic SQL / Redis Bloom Filter Indexing
               </span>
               <Link
-                to="/dashboard"
-                onClick={() => {
-                  if (setIsAuthenticated) setIsAuthenticated(true)
-                }}
-                className="text-blue-600 dark:text-blue-400 font-bold hover:underline inline-flex items-center gap-1"
+                to="/login"
+                className="font-bold hover:underline inline-flex items-center gap-1"
+                style={{ color: darkMode ? '#60A5FA' : '#2563EB' }}
               >
-                <span>Open Full Interactive Batch Screen</span>
+                <span>Sign in to Test Live Anomaly Queue</span>
                 <i className="bi bi-arrow-right"></i>
               </Link>
             </div>
@@ -316,7 +358,13 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
       {/* ======================================================== */}
       {/* 4. CORE FEATURES (REUSABLE CARDS GRID)                    */}
       {/* ======================================================== */}
-      <section id="features" className="py-16 lg:py-20 bg-slate-50/60 dark:bg-slate-900/30">
+      <section
+        id="features"
+        className="py-16 lg:py-20 transition-all"
+        style={{
+          backgroundColor: darkMode ? '#0B1120' : '#F8FAFC'
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
@@ -472,7 +520,14 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
       {/* ======================================================== */}
       {/* 6. SECURITY & DPDP COMPLIANCE SECTION                     */}
       {/* ======================================================== */}
-      <section id="security" className="py-16 lg:py-20 bg-slate-50/70 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+      <section
+        id="security"
+        className="py-16 lg:py-20 border-t transition-all"
+        style={{
+          backgroundColor: darkMode ? '#0F172A' : '#F8FAFC',
+          borderColor: darkMode ? '#1E293B' : '#E2E8F0'
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-50 text-purple-700 dark:bg-purple-950/80 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
@@ -487,47 +542,107 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl">
+            <div
+              className="rounded-2xl border p-6 space-y-3 transition-all shadow-sm"
+              style={{
+                backgroundColor: darkMode ? '#1E293B' : '#FFFFFF',
+                borderColor: darkMode ? '#334155' : '#E2E8F0',
+                color: darkMode ? '#F8FAFC' : '#0F172A'
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                style={{
+                  backgroundColor: darkMode ? 'rgba(88,28,135,0.4)' : '#FAF5FF',
+                  color: darkMode ? '#C084FC' : '#7E22CE',
+                  border: darkMode ? '1px solid #6B21A8' : '1px solid #E9D5FF'
+                }}
+              >
                 <i className="bi bi-key-fill"></i>
               </div>
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+              <h3 className="font-bold text-lg" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                 Keyed HMAC Lookup Tokens
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>
                 Raw 12-digit student identifiers are never written to unencrypted application logs. Cross-college matching is performed using privacy-preserving cryptographic hashes.
               </p>
-              <div className="text-xs font-mono text-purple-600 dark:text-purple-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div
+                className="text-xs font-mono pt-2 border-t"
+                style={{
+                  color: darkMode ? '#C084FC' : '#7E22CE',
+                  borderColor: darkMode ? '#334155' : '#F1F5F9'
+                }}
+              >
                 HMAC-SHA256 Tokenization
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
+            <div
+              className="rounded-2xl border p-6 space-y-3 transition-all shadow-sm"
+              style={{
+                backgroundColor: darkMode ? '#1E293B' : '#FFFFFF',
+                borderColor: darkMode ? '#334155' : '#E2E8F0',
+                color: darkMode ? '#F8FAFC' : '#0F172A'
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                style={{
+                  backgroundColor: darkMode ? 'rgba(30,58,138,0.4)' : '#EFF6FF',
+                  color: darkMode ? '#93C5FD' : '#1D4ED8',
+                  border: darkMode ? '1px solid #1E40AF' : '1px solid #BFDBFE'
+                }}
+              >
                 <i className="bi bi-file-earmark-lock-fill"></i>
               </div>
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+              <h3 className="font-bold text-lg" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                 Verifiable Parental Consent
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>
                 Mandatory under DPDP Act for minor students. Includes purpose-bound permissions, time-limited access windows, and guaranteed parental revocation mechanisms.
               </p>
-              <div className="text-xs font-mono text-blue-600 dark:text-blue-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div
+                className="text-xs font-mono pt-2 border-t"
+                style={{
+                  color: darkMode ? '#93C5FD' : '#1D4ED8',
+                  borderColor: darkMode ? '#334155' : '#F1F5F9'
+                }}
+              >
                 JSON-LD Signed Consent Artifact
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
+            <div
+              className="rounded-2xl border p-6 space-y-3 transition-all shadow-sm"
+              style={{
+                backgroundColor: darkMode ? '#1E293B' : '#FFFFFF',
+                borderColor: darkMode ? '#334155' : '#E2E8F0',
+                color: darkMode ? '#F8FAFC' : '#0F172A'
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                style={{
+                  backgroundColor: darkMode ? 'rgba(6,78,59,0.4)' : '#ECFDF5',
+                  color: darkMode ? '#6EE7B7' : '#065F46',
+                  border: darkMode ? '1px solid #059669' : '1px solid #A7F3D0'
+                }}
+              >
                 <i className="bi bi-journal-check"></i>
               </div>
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+              <h3 className="font-bold text-lg" style={{ color: darkMode ? '#F8FAFC' : '#0F172A' }}>
                 Tamper-Evident Audit Trails
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>
                 Every administrative review, intake adjustment, or credential scan is logged with officer ID, timestamp, and immutable SHA-256 evidence hashes.
               </p>
-              <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div
+                className="text-xs font-mono pt-2 border-t"
+                style={{
+                  color: darkMode ? '#6EE7B7' : '#065F46',
+                  borderColor: darkMode ? '#334155' : '#F1F5F9'
+                }}
+              >
                 Append-Only Ledger (No Silent Deletion)
               </div>
             </div>
@@ -536,7 +651,7 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
       </section>
 
       {/* ======================================================== */}
-      {/* 7. CALL TO ACTION / DIRECT DASHBOARD ACCESS BANNER        */}
+      {/* 7. CALL TO ACTION / INSTITUTION ACCESS BANNER             */}
       {/* ======================================================== */}
       <section className="py-16 lg:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -556,32 +671,24 @@ export default function LandingPage({ darkMode, setIsAuthenticated, setUserRole 
               </h2>
 
               <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
-                Explore the live multi-role dashboard for Technical Institutions and AICTE Regulators. Run mock batch uploads, inspect duplicate flags, and test degree QR verification.
+                Log in to test live batch enrollment validation, quota monitors, and instant QR verification. 
+                <strong className="block mt-1 text-white">
+                  Demo credentials for all 4 roles are provided on the Login page for 1-click evaluation.
+                </strong>
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
                 <Link
-                  to="/dashboard"
-                  onClick={() => {
-                    if (setIsAuthenticated) setIsAuthenticated(true)
-                  }}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-blue-900 bg-white hover:bg-blue-50 shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <i className="bi bi-speedometer2 text-base text-blue-700"></i>
-                  <span>Direct Dashboard Access</span>
-                </Link>
-
-                <Link
                   to="/login"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-blue-900 bg-white hover:bg-blue-50 shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5"
                 >
-                  <i className="bi bi-person-fill-lock"></i>
-                  <span>Institution Login</span>
+                  <i className="bi bi-box-arrow-in-right text-base text-blue-700"></i>
+                  <span>Sign In with Demo Account</span>
                 </Link>
 
                 <Link
                   to="/register"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-teal-800/60 hover:bg-teal-800/80 border border-teal-400/40 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <i className="bi bi-building-add"></i>
                   <span>Register College</span>

@@ -28,6 +28,40 @@
   --border-color: #334155;
 }
 
+/* Force Bootstrap bg-white and bg-light to dark slate in dark mode */
+[data-theme="dark"] .bg-white,
+.dark .bg-white,
+[data-theme="dark"] .bg-white\/80,
+.dark .bg-white\/80,
+[data-theme="dark"] .bg-white\/90,
+.dark .bg-white\/90 {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .bg-light,
+.dark .bg-light,
+[data-theme="dark"] .bg-slate-50,
+.dark .bg-slate-50 {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .text-slate-900,
+.dark .text-slate-900 {
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .text-slate-600,
+.dark .text-slate-600 {
+  color: #CBD5E1 !important;
+}
+
+[data-theme="dark"] .text-slate-700,
+.dark .text-slate-700 {
+  color: #E2E8F0 !important;
+}
+
 /* Prevent horizontal scroll and viewport spillover */
 html, body {
   margin: 0;

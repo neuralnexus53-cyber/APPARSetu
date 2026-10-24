@@ -214,23 +214,6 @@ function Navbar({
                   )}
                 </button>
 
-                {/* Temporary Direct Dashboard Access Button */}
-                <Link
-                  to="/dashboard"
-                  onClick={() => {
-                    setMobileMenuOpen(false)
-                    if (setIsAuthenticated) setIsAuthenticated(true)
-                  }}
-                  className="btn btn-sm rounded-pill px-3 py-2 fw-bold d-flex align-items-center gap-1.5 shadow-sm text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 transition-all border-0"
-                  title="Direct preview access to the AICTE / Institution Dashboard"
-                >
-                  <i className="bi bi-speedometer2"></i>
-                  <span>Direct Dashboard Access</span>
-                  <span className="badge bg-white text-emerald-800 rounded-pill px-1.5 py-0.5 ms-1 text-[10px] font-extrabold uppercase">
-                    Demo
-                  </span>
-                </Link>
-
                 {/* Register Button */}
                 <Link
                   to="/register"

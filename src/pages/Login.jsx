@@ -188,14 +188,32 @@ export default function Login({ darkMode, setIsAuthenticated, setUserRole }) {
           </form>
 
           {/* Quick Demo Accounts Selection (Prototype Only) */}
-          <div className="mt-6 pt-5 border-t" style={{ borderColor: darkMode ? '#334155' : '#E2E8F0' }}>
-            <div className="flex items-center justify-between mb-3">
-              <p className="text-xs font-bold uppercase tracking-wider" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
-                <i className="bi bi-lightning-charge-fill text-amber-500 me-1"></i>
-                Demo Accounts (Prototype Only)
+          <div
+            className="mt-6 p-4 rounded-xl border transition-all"
+            style={{
+              backgroundColor: darkMode ? '#0F172A' : '#F1F5F9',
+              borderColor: darkMode ? '#334155' : '#CBD5E1'
+            }}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5" style={{ color: darkMode ? '#60A5FA' : '#1D4ED8' }}>
+                <i className="bi bi-shield-lock-fill text-amber-500"></i>
+                Instant 1-Click Demo Evaluation
               </p>
-              <span className="text-[11px] text-gray-400">Click to fill</span>
+              <span
+                className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: darkMode ? '#1E3A8A' : '#DBEAFE',
+                  color: darkMode ? '#93C5FD' : '#1E40AF'
+                }}
+              >
+                No Password Needed
+              </span>
             </div>
+
+            <p className="text-xs mb-3" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
+              Click <strong>"Enter ➔"</strong> on any role below to immediately log in and access the full control dashboard:
+            </p>
 
             <div className="space-y-2">
               {demoAccounts.map((acc) => (
@@ -203,7 +221,7 @@ export default function Login({ darkMode, setIsAuthenticated, setUserRole }) {
                   key={acc.email}
                   className="w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between gap-2 group cursor-pointer hover:shadow-sm"
                   style={{
-                    backgroundColor: email === acc.email ? (darkMode ? '#1E3A8A25' : '#EFF6FF') : (darkMode ? '#0F172A' : '#F8FAFC'),
+                    backgroundColor: email === acc.email ? (darkMode ? '#1E3A8A40' : '#EFF6FF') : (darkMode ? '#1E293B' : '#FFFFFF'),
                     borderColor: email === acc.email ? '#3B82F6' : (darkMode ? '#334155' : '#E2E8F0')
                   }}
                   onClick={() => fillDemoAccount(acc)}
@@ -224,7 +242,7 @@ export default function Login({ darkMode, setIsAuthenticated, setUserRole }) {
                       e.stopPropagation()
                       quickDemoLogin(acc)
                     }}
-                    className="opacity-80 group-hover:opacity-100 text-[11px] px-2 py-1 rounded bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shrink-0"
+                    className="text-xs px-2.5 py-1 rounded bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors shadow-sm shrink-0"
                     title={`Log in instantly as ${acc.role}`}
                   >
                     Enter ➔

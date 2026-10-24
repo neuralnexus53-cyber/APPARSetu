@@ -30,7 +30,7 @@ export default function HeroCarousel({ darkMode, setIsAuthenticated }) {
       badge: 'Zero Ghost Enrolments',
       statNumber: 'O(1) Check',
       statLabel: 'Cross-Institute Unique Index',
-      primaryBtn: { text: 'Launch Live Dashboard', to: '/dashboard', icon: 'bi-grid-1x2-fill' },
+      primaryBtn: { text: 'Sign In to Portal', to: '/login', icon: 'bi-box-arrow-in-right' },
       secondaryBtn: { text: 'See Duplicate Radar', to: '#interactive-demo', icon: 'bi-radar' },
       visualType: 'duplicate'
     },
@@ -48,7 +48,7 @@ export default function HeroCarousel({ darkMode, setIsAuthenticated }) {
       badge: 'Intake Ceiling Guard',
       statNumber: '100% Strict',
       statLabel: 'Deterministic Math (No AI Guessing)',
-      primaryBtn: { text: 'Test Batch Validation', to: '/dashboard', icon: 'bi-shield-check' },
+      primaryBtn: { text: 'Sign In to Portal', to: '/login', icon: 'bi-box-arrow-in-right' },
       secondaryBtn: { text: 'View Intake Norms', to: '#features', icon: 'bi-file-earmark-check' },
       visualType: 'quota'
     },
@@ -66,7 +66,7 @@ export default function HeroCarousel({ darkMode, setIsAuthenticated }) {
       badge: 'Tamper-Evident QR',
       statNumber: '< 2.0 Sec',
       statLabel: 'Public Verification Speed',
-      primaryBtn: { text: 'Scan & Verify Demo', to: '/dashboard', icon: 'bi-qr-code-scan' },
+      primaryBtn: { text: 'Sign In to Portal', to: '/login', icon: 'bi-box-arrow-in-right' },
       secondaryBtn: { text: 'Security Blueprint', to: '#security', icon: 'bi-lock-fill' },
       visualType: 'qr'
     },
@@ -84,7 +84,7 @@ export default function HeroCarousel({ darkMode, setIsAuthenticated }) {
       badge: 'Lifelong Student ID',
       statNumber: '12.8M+',
       statLabel: 'APAAR IDs Anchored',
-      primaryBtn: { text: 'Explore Platform', to: '/dashboard', icon: 'bi-speedometer2' },
+      primaryBtn: { text: 'Sign In to Portal', to: '/login', icon: 'bi-box-arrow-in-right' },
       secondaryBtn: { text: 'How It Works', to: '#how-it-works', icon: 'bi-diagram-3' },
       visualType: 'id'
     }
@@ -234,9 +234,6 @@ export default function HeroCarousel({ darkMode, setIsAuthenticated }) {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-3">
               <Link
                 to={active.primaryBtn.to}
-                onClick={() => {
-                  if (setIsAuthenticated) setIsAuthenticated(true)
-                }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <i className={`bi ${active.primaryBtn.icon}`}></i>
