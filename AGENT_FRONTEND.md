@@ -2,8 +2,8 @@
 > **Problem Statement**: SIH26263 - Student Data Management & Enrolment Verification Platform  
 > **Authority**: All India Council for Technical Education (AICTE), Ministry of Education, Govt. of India  
 > **Team**: neuroneurz  
-> **Repository**: [https://github.com/sarthakmishra200906-source/test2](https://github.com/sarthakmishra200906-source/test2)  
-> **Live Demo**: [https://sarthakmishra200906-source.github.io/test2](https://sarthakmishra200906-source.github.io/test2)
+> **Repository**: [https://github.com/neuralnexus53-cyber/APPARSetu](https://github.com/neuralnexus53-cyber/APPARSetu)  
+> **Live Demo**: [https://neuralnexus53-cyber.github.io/APPARSetu](https://neuralnexus53-cyber.github.io/APPARSetu)
 
 ---
 

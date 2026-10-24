@@ -3,8 +3,8 @@
 > **Developed by Team neuroneurz**  
 > **Problem Statement ID**: SIH26263  
 > **Agency**: All India Council for Technical Education (AICTE), Ministry of Education  
-> **Live Web App**: [https://sarthakmishra200906-source.github.io/test2](https://sarthakmishra200906-source.github.io/test2)  
-> **GitHub Repository**: [https://github.com/sarthakmishra200906-source/test2](https://github.com/sarthakmishra200906-source/test2)
+> **Live Web App**: [https://neuralnexus53-cyber.github.io/APPARSetu](https://neuralnexus53-cyber.github.io/APPARSetu)  
+> **GitHub Repository**: [https://github.com/neuralnexus53-cyber/APPARSetu](https://github.com/neuralnexus53-cyber/APPARSetu)
 
 ---
 
@@ -56,8 +56,8 @@ Direct dashboard access has been replaced with authentic role-based sign-in. To 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/sarthakmishra200906-source/test2.git
-cd test2
+git clone https://github.com/neuralnexus53-cyber/APPARSetu.git
+cd APPARSetu
 
 # 2. Install dependencies
 npm install

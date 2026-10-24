@@ -1,7 +1,7 @@
 # Frontend Work Completed - APAARSetu (SIH26263)
 > **Team neuroneurz** | National Digital Control Room for AICTE Enrolment & Degree Verification  
-> **Repository**: [sarthakmishra200906-source/test2](https://github.com/sarthakmishra200906-source/test2)  
-> **Hosted Live At**: [https://sarthakmishra200906-source.github.io/test2](https://sarthakmishra200906-source.github.io/test2)
+> **Repository**: [neuralnexus53-cyber/APPARSetu](https://github.com/neuralnexus53-cyber/APPARSetu)  
+> **Hosted Live At**: [https://neuralnexus53-cyber.github.io/APPARSetu](https://neuralnexus53-cyber.github.io/APPARSetu)
 
 ---
 
